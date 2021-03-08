@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 /**
  * Menu class provides a text based user interface
- * controlled via command-line by the user
+ * controlled via command-line by the user of the app
  */
 
 public class Menu {
