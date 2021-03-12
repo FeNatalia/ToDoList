@@ -80,9 +80,9 @@ public class Menu {
             case 5:
                 printOptions();
                 break;
-            //case 1:
-
-
+            case 1:
+                viewTaskList(this.taskList);
+                break;
             case 2:
                 addTask();
                 break;
@@ -98,14 +98,67 @@ public class Menu {
         }
         return quit;
     }
+
+    /**
+     * Shows sorting options
+     * @param list
+     */
+    public void viewTaskList (TaskList list) {
+        if (list.isEmpty()) {
+            System.out.println("No tasks yet, you can go back to Main Menu and add your tasks.");
+        } else {
+            sortTaskList(list);
+            System.out.println(list.getTasks());
+        }
+    }
+
+    /**
+     * Sorts and shows the task list in order chosen by user
+     * @param list
+     */
+    public void sortTaskList (TaskList list) {
+        boolean correctCommand = false;
+
+        while (!correctCommand) {
+            System.out.println("View Task List sorted by: \n(1) project name or \n(2) due date?" +
+                    "\nType 0 to go back to Main Menu");
+            try {
+                int command = Integer.valueOf(scanner.nextLine());
+                switch (command) {
+                    case 0:
+                        printOptions();
+                        acceptOption();
+                    case 1:
+                        taskList.sortByProject();
+                        correctCommand = true;
+                        break;
+                    case 2:
+                        taskList.sortByDate();
+                        correctCommand = true;
+                        break;
+                    default:
+                        printWrongOptionWarning();
+                }
+            }
+            catch (IllegalArgumentException e) {
+                printWrongOptionWarning();
+            }
+        }
+    }
     /**
      * The app creates a task based on the data provided by the user
      */
-
     public void addTask() {
         String title = getTaskTitle();
         String project = getProjectName();
         LocalDate date = getDueDate();
+
+        Task task = new Task (title, project, date);
+
+        if (this.taskList.addTask(task)) {
+            System.out.println("Your task \"" + title+ "\" is assigned to project \""
+                    + project + "\" with the due date on "+ getDueDate().toString());
+        }
     }
 
     /**
