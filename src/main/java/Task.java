@@ -1,10 +1,14 @@
 import java.io.Serializable;
 import java.time.LocalDate;
 
+/**
+ * Tasks are created from Task class. Task class implements Serializable.
+ * It is able to write and read objects to and from streams.
+ */
 public class Task implements Serializable {
     String title, project;
     LocalDate dueDate;
-    boolean done;
+    boolean isDone;
 
 
     /**
@@ -18,42 +22,70 @@ public class Task implements Serializable {
         this.title = title;
         this.project = project;
         this.dueDate = dueDate;
-        this.done = false;
+        this.isDone = false;
     }
 
+    /**
+     * @return Task title is returned as a string
+     */
     public String getTitle() {
         return this.title;
     }
 
+    /**
+     * @return Project name of the task is returned as a string
+     */
     public String getProject() {
         return this.project;
     }
+
+    /**
+     * @return Task due date is returned as a local date
+     */
 
     public LocalDate getDueDate() {
         return this.dueDate;
     }
 
-    public boolean done() {
-        return this.done;
+    /**
+     * @return Task completeness is returned as boolean
+     */
+    public boolean isDone() { return this.isDone();
     }
 
+    /**
+     * @param title Task title is set to a new
+     */
     public void setTitle (String title) {
         this.title = title;
     }
 
+    /**
+     * Project name is set to a new
+     * @param project
+     */
     public void setProject (String project) {
         this.project = project;
     }
 
-    public void markDone() {
-        this.done = true;
+    /**
+     * Task due date is set to a new
+     * @param date
+     */
+    public void setDueDate (LocalDate date) {
+        this.dueDate = date;
     }
 
+    /**
+     * Task is being marked as done
+     */
+    public void markDone() { this.isDone = true; }
+
+    /**
+     * @return Tasks made into a string
+     */
     public String toString() {
-        String s= this.title + ", project:" + this.project + ", deadline: " + this.dueDate;
+        String s= " " + this.title + ", project: " + this.project + ", deadline: " + this.dueDate;
         return s;
     }
-
-
-
 }
