@@ -181,9 +181,12 @@ public class Menu {
      */
     private String getTaskTitle() {
         String title="";
+        while (fieldEmpty(title)) {
+            System.out.println("Type your task's title:");
+            title = scanner.nextLine();
 
-        System.out.println("Type your task's title:");
-        title = scanner.nextLine();
+            if (fieldEmpty(title)) printEmptyFieldWarning();
+        }
         return title;
     }
     /**
@@ -193,9 +196,20 @@ public class Menu {
      */
     private String getProjectName() {
         String project ="";
-        System.out.println("Type a project name your task would belong to:");
-        project = scanner.nextLine();
+        while (fieldEmpty(project)) {
+            System.out.println("Type a project name your task would belong to:");
+            project = scanner.nextLine();
+            if (fieldEmpty (project)) printEmptyFieldWarning();
+        }
+
         return project;
+    }
+
+    /**
+     * This checks if the field is empty
+     */
+    private boolean fieldEmpty(String name) {
+        return name.equals("");
     }
     /**
      * The app asks user to provide the task's deadline in LocalDate format
@@ -234,6 +248,10 @@ public class Menu {
      */
     private void printWrongFormatWarning() {
         System.out.println("Incorrect format, please follow this format: yyyy-mm-dd");
+    }
+
+    private void printEmptyFieldWarning() {
+        System.out.println("The field cannot be empty!");
     }
 
     /**
