@@ -19,6 +19,7 @@ public class TaskList implements Serializable {
     }
 
     /**
+     * This accepts an index and brings the task with that index from the list
      * @param index index is accepted
      * @return returns a task from task list by the index
      */
@@ -28,6 +29,7 @@ public class TaskList implements Serializable {
     }
 
     /**
+     * This adds the given task to the list
      * @param task the task which is given
      * @return adds the task to task list
      */
@@ -37,6 +39,7 @@ public class TaskList implements Serializable {
     }
 
     /**
+     * This removes the given task from the list
      * @param task the task which is given
      * @return removes the task from the task list
      */

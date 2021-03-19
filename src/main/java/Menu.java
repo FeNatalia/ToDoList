@@ -78,8 +78,8 @@ public class Menu {
     /**
      * The app executes the command given by the user
      * if invalid command then it prints a warning message
-     * @param option
-     * @return
+     * @param option a command given by the user
+     * @return a warning message in case of invalid command
      */
     public boolean executeOption (int option){
         boolean quit = false;
@@ -235,11 +235,18 @@ public class Menu {
     private void printWrongFormatWarning() {
         System.out.println("Incorrect format, please follow this format: yyyy-mm-dd");
     }
+
+    /**
+     * This saves changes for both current and completed tasks.
+     */
     public void saveTask() {
         fileSaver.saveTask(this.taskList, "myTasks.txt");
         fileSaver.saveTask(this.completedTasks, "finishedTasks.txt");
     }
 
+    /**
+     * This edits a task via helper methods (pickTaskToEdit and executeEditOption)
+     */
     public void editTask(){
         if (this.taskList.isEmpty()) {
             System.out.println("You don't have any saved tasks in your list to edit.");
@@ -251,6 +258,10 @@ public class Menu {
         executeEditOption(pickedTask, taskNum);
     }
 
+    /**
+     * A helper method asks for the task number to edit and
+     * @return an index of the task from TaskList
+     */
     public int pickTaskToEdit(){
         while (true) {
             System.out.println("Pick the task that you would like to edit:\n");
@@ -269,6 +280,11 @@ public class Menu {
         }
     }
 
+    /**
+     * A helper method that edits either the task's title, project name, due date, marks it as done, or deletes it.
+     * @param pickedTask
+     * @param taskNum
+     */
     public void executeEditOption(Task pickedTask, int taskNum) {
         boolean correctOption = false;
         while (!correctOption) {

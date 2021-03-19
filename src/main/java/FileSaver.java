@@ -1,6 +1,15 @@
 import java.io.*;
 
+/**
+ * The FileSaver class saves tasks right before the user quits the app and it helps to opens saved tasks.
+ */
 public class FileSaver {
+
+    /**
+     * This saves tasks to a file
+     * @param taskList
+     * @param name
+     */
     public void saveTask(TaskList taskList, String name) {
         try {
             FileOutputStream file = new FileOutputStream(name);
@@ -16,6 +25,12 @@ public class FileSaver {
             e.printStackTrace();
         }
     }
+
+    /**
+     * This opens a saved file from previous sessions.
+     * @param name
+     * @return
+     */
     public TaskList viewSavedTask(String name){
         TaskList taskList = new TaskList();
         try {
