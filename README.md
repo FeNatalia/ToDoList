@@ -2,7 +2,7 @@
 ToDoList is a simple todo list app with a text-based user interface. 
 You can add your tasks, see and maintain a list of your tasks. The app is controlled by commands written by the user in a terminal. 
 
-![The screenshot of the main menu] (https://github.com/FeNatalia/ToDoListProject/blob/main/screenshots/MainMenuScreenshot.png)
+![The screenshot of the main menu](https://github.com/FeNatalia/ToDoListProject/blob/main/screenshots/MainMenuScreenshot.png)
 
 ## How to start
 1. Clone this repository to your computer (open your Terminal and write git clone https://github.com/FeNatalia/ToDoListProject )
