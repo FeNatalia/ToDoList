@@ -319,7 +319,7 @@ public class Menu {
                         break;
                     case 4:
                         pickedTask.markDone();
-                        if (this.taskList.removeTask(pickedTask) && this.taskList.addTask(pickedTask)) {
+                        if (this.taskList.removeTask(pickedTask) && this.completedTasks.addTask(pickedTask)) {
                             System.out.println("The task is marked as done now and is transferred into completed task list \n" +
                                     "which is available in the main menu");
                             correctOption = true;
