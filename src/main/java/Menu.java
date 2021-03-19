@@ -184,7 +184,6 @@ public class Menu {
         while (fieldEmpty(title)) {
             System.out.println("Type your task's title:");
             title = scanner.nextLine();
-
             if (fieldEmpty(title)) printEmptyFieldWarning();
         }
         return title;
