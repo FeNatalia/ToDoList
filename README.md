@@ -32,7 +32,7 @@ If the task list is empty, then the app will tell you that there is nothing to v
 
 ### (2) Add New Task
 
-When you choose this option, you will be asked to fill in a task name, project name (that the task will be associated with), and due date. When all steps are done, the app will tell you that it is saved. And with command (5) you will be returned to the main menu. 
+When you choose this option, you will be asked to fill in a task name, project name (that the task will be associated with), and due date. When all steps are done, the app will tell you that it is saved. And with command (5) you will be returned to the main menu. Here is an example of how the task can be created:
 
 ![Add Task Screenshot](https://github.com/FeNatalia/ToDoListProject/blob/main/screenshots/AddTaskScreenshot.png)
 
@@ -55,8 +55,7 @@ When you choose this option, all changes will be saved and the app will quit. Th
 
 ### (0) View finished tasks 
 
-When you choose this option, you will be able to view all previously finished tasks sorted by either project name or due date. 
-And with command (5) you will be returned to the main menu. 
+When you choose this option, you will be able to view all previously finished tasks sorted by either project name or due date (pick one sorting option by shown commands. And with command (5) you will be returned to the main menu. 
 
 
 
